@@ -1,0 +1,47 @@
+.voiceRecorder {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.recordMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.status {
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.recordbutton {
+  display: flex;
+  width: 160px;
+  height: 160px;
+  padding: 34px 36px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50%;
+  border: 8px solid #902ee6;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.audioPlayer {
+  width: 100%;
+}
