@@ -456,10 +456,7 @@ const AudioRecorder = React.forwardRef<AudioRecorderHandle, AudioRecorderProps>(
       try {
         setState((p) => ({ ...p, isProcessing: true }));
         const mp3 = await getMp3Blob();
-        const filename = `VOICE-${new Date()
-          .toISOString()
-          .slice(0, 19)
-          .replace(/:/g, "-")}.mp3`;
+        const filename = `VOICE-${Date.now()}.mp3`;
         const file = new File([mp3], filename, { type: "audio/mpeg" });
         onSave(file);
         setState((p) => ({ ...p, isProcessing: false }));
