@@ -28,6 +28,10 @@ export interface AudioRecorderProps {
   onStatusChange?: (status: RecordingStatus, hasAudio: boolean) => void;
   // Callback when user saves the recording (passes the File object)
   onSave?: (file: File) => void;
+  //cancelButton label
+  cancelButtonLabel?: string;
+  //Save button label
+  saveButtonLabel?: string;
 }
 
 export interface AudioRecorderHandle {
@@ -40,7 +44,18 @@ export interface AudioRecorderHandle {
 }
 
 const AudioRecorder = React.forwardRef<AudioRecorderHandle, AudioRecorderProps>(
-  ({ onUpload, onError, maxDurationSeconds, onStatusChange, onSave }, ref) => {
+  (
+    {
+      onUpload,
+      onError,
+      maxDurationSeconds,
+      onStatusChange,
+      onSave,
+      cancelButtonLabel = "Record Again",
+      saveButtonLabel = "Save",
+    },
+    ref
+  ) => {
     // State management
     const [state, setState] = useState<AudioRecorderState>({
       status: "idle",
@@ -814,7 +829,7 @@ const AudioRecorder = React.forwardRef<AudioRecorderHandle, AudioRecorderProps>(
                 onClick={reset}
                 disabled={state.isProcessing}
               >
-                Record Again
+                {cancelButtonLabel}
               </button>
               {onSave && (
                 <button
@@ -822,7 +837,7 @@ const AudioRecorder = React.forwardRef<AudioRecorderHandle, AudioRecorderProps>(
                   onClick={handleSave}
                   disabled={state.isProcessing}
                 >
-                  {state.isProcessing ? "Processing..." : "Save"}
+                  {state.isProcessing ? "Processing..." : saveButtonLabel}
                 </button>
               )}
             </div>

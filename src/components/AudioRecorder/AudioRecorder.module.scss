@@ -64,6 +64,7 @@
 }
 
 .buttonSecondary {
+  max-width: 100%;
   display: flex;
   padding: 16px;
   justify-content: center;
@@ -74,7 +75,6 @@
   cursor: pointer;
   border-radius: 16px;
   background: #1d1d1d;
-  transition: all 0.2s ease;
   color: #fff;
   text-align: center;
   font-size: 18px;
@@ -91,6 +91,7 @@
 }
 
 .buttonPrimary {
+  max-width: 100%;
   display: flex;
   padding: 16px;
   justify-content: center;
@@ -101,7 +102,6 @@
   cursor: pointer;
   border-radius: 16px;
   background: #902ee6;
-  transition: all 0.2s ease;
   color: #fff;
   text-align: center;
   font-size: 18px;

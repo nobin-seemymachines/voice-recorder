@@ -25,6 +25,8 @@ const App = () => {
         ref={recorderRef}
         maxDurationSeconds={50}
         onSave={(file) => setSavedFile(file)}
+        cancelButtonLabel="Record Again"
+        saveButtonLabel="Save Recording"
       />
       {savedFile && (
         <div style={{ marginTop: 8 }}>
